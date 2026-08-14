@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ashwini K R | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f8fc;
+    color: #181824;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 8%;
+
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0 3px 20px rgba(0,0,0,0.07);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: #6657d9;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #6657d9;
+}
+
+/* ================= HOME ================= */
+
+#home {
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+
+    padding: 70px 8%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4f1ff,
+            #ffffff
+        );
+}
+
+.hero {
+    max-width: 680px;
+}
+
+.hero small {
+    color: #6657d9;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1.1;
+    margin: 15px 0;
+}
+
+.hero h1 span {
+    color: #6657d9;
+}
+
+.hero h2 {
+    color: #555;
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    color: #666;
+    max-width: 620px;
+    margin-bottom: 25px;
+}
+
+/* ================= BLINKING CURSOR ================= */
+
+.cursor {
+    display: inline-block;
+
+    width: 3px;
+    height: 25px;
+
+    background: #6657d9;
+
+    margin-left: 5px;
+
+    vertical-align: middle;
+
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 49% {
+        opacity: 1;
+    }
+
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+/* ================= BUTTONS ================= */
+
+.btn {
+    display: inline-block;
+
+    padding: 12px 24px;
+
+    margin: 5px;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.primary {
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #6657d9,
+        #8174ed
+    );
+
+    box-shadow:
+        0 10px 25px rgba(102,87,217,0.25);
+}
+
+.primary:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(102,87,217,0.35);
+}
+
+.secondary {
+    color: #6657d9;
+
+    border: 2px solid #6657d9;
+
+    background: white;
+}
+
+.secondary:hover {
+    color: white;
+    background: #6657d9;
+
+    transform: translateY(-4px);
+}
+
+/* ================= SOCIAL ================= */
+
+.social {
+    margin-top: 22px;
+}
+
+.social a {
+    margin-right: 20px;
+
+    color: #6657d9;
+
+    text-decoration: none;
+
+    font-weight: 700;
+}
+
+.social a:hover {
+    text-decoration: underline;
+}
+
+/* =====================================================
+   PROFESSIONAL PROFILE PHOTO
+===================================================== */
+
+.photo-wrap {
+
+    width: 350px;
+    height: 380px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    flex-shrink: 0;
+}
+
+/* Soft purple glow */
+
+.photo-wrap::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 310px;
+    height: 310px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6657d9,
+            #b9b2ff
+        );
+
+    border-radius: 50%;
+
+    filter: blur(38px);
+
+    opacity: 0.28;
+
+    animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+
+    0%, 100% {
+        transform: scale(0.9);
+        opacity: 0.20;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.35;
+    }
+}
+
+/* Main photo */
+
+.profile {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 285px;
+    height: 330px;
+
+    object-fit: cover;
+
+    border-radius: 35px;
+
+    border: 7px solid white;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.16),
+        0 0 35px rgba(102,87,217,0.20);
+
+    transform: rotate(2deg);
+
+    transition: all 0.5s ease;
+
+    animation: photoFloat 4s ease-in-out infinite;
+}
+
+/* Floating animation */
+
+@keyframes photoFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(2deg);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(-1deg);
+    }
+}
+
+/* Hover effect */
+
+.profile:hover {
+
+    transform:
+        translateY(-5px)
+        rotate(0deg)
+        scale(1.04);
+
+    box-shadow:
+        0 25px 60px rgba(102,87,217,0.30),
+        0 0 50px rgba(102,87,217,0.25);
+}
+
+/* ================= SECTIONS ================= */
+
+section {
+    padding: 90px 8%;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.title small {
+    color: #6657d9;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.title h2 {
+    font-size: 38px;
+    margin-top: 5px;
+}
+
+.title h2::after {
+    content: "";
+
+    display: block;
+
+    width: 50px;
+    height: 4px;
+
+    margin: 12px auto 0;
+
+    background: #6657d9;
+
+    border-radius: 10px;
+}
+
+/* ================= ABOUT ================= */
+
+#about {
+    background: white;
+}
+
+.card {
+
+    max-width: 920px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 18px;
+
+    border-left: 5px solid #6657d9;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.07);
+
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 45px rgba(102,87,217,0.13);
+}
+
+.card h3 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #666;
+    margin-bottom: 14px;
+}
+
+.location {
+    display: inline-block;
+
+    color: #6657d9;
+
+    background: #eeecff;
+
+    padding: 7px 14px;
+
+    border-radius: 20px;
+
+    font-weight: 700;
+}
+
+/* ================= SKILLS ================= */
+
+#skills,
+#contact {
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0efff,
+            #f8fbff
+        );
+}
+
+.skills {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(200px,1fr)
+        );
+
+    gap: 20px;
+}
+
+.skill {
+
+    background: white;
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.06);
+
+    transition: 0.4s;
+}
+
+.skill:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(102,87,217,0.15);
+}
+
+.skill h3 {
+    margin-bottom: 12px;
+}
+
+.skill p {
+    color: #666;
+}
+
+/* ================= PROJECT ================= */
+
+#projects {
+    background: white;
+}
+
+.tags span {
+
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    margin: 4px;
+
+    background: #eeecff;
+
+    color: #6657d9;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+/* ================= EDUCATION ================= */
+
+#education {
+    background: #faf9ff;
+}
+
+/* ================= CONTACT ================= */
+
+.contact {
+    max-width: 850px;
+    text-align: center;
+}
+
+.contact p {
+    margin: 15px;
+}
+
+.contact a:not(.btn) {
+    color: #6657d9;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    background: #15151d;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+footer a {
+
+    color: white;
+
+    margin: 0 10px;
+
+    text-decoration: none;
+}
+
+footer p {
+
+    color: #aaa;
+
+    margin-top: 8px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 750px) {
+
+    nav {
+
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+    nav ul {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 12px 18px;
+    }
+
+    #home {
+
+        flex-direction: column-reverse;
+
+        text-align: center;
+
+        padding-top: 60px;
+    }
+
+    .hero p {
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .social {
+        text-align: center;
+    }
+
+    .photo-wrap {
+
+        width: 280px;
+        height: 310px;
+    }
+
+    .photo-wrap::before {
+
+        width: 250px;
+        height: 250px;
+    }
+
+    .profile {
+
+        width: 220px;
+        height: 270px;
+    }
+
+    section {
+        padding: 65px 5%;
+    }
+
+    .card {
+        padding: 30px 25px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        Ashwini K R
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+            <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+            <a href="#education">Education</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home">
+
+    <div class="hero">
+
+        <small>
+            ● WELCOME TO MY PORTFOLIO
+        </small>
+
+        <h1>
+            Hi, I'm
+            <span>Ashwini K R</span>
+        </h1>
+
+        <h2>
+            Data Analyst |
+            Information Science Engineering Student
+            <span class="cursor"></span>
+        </h2>
+
+        <p>
+            I am passionate about Data Analytics,
+            Artificial Intelligence and building
+            practical technology solutions.
+        </p>
+
+
+        <a
+            href="#projects"
+            class="btn primary">
+
+            View My Work
+
+        </a>
+
+
+        <a
+            href="#contact"
+            class="btn secondary">
+
+            Contact Me
+
+        </a>
+
+
+        <div class="social">
+
+            <a
+                href="https://github.com/ashwinikr13"
+                target="_blank">
+
+                GitHub ↗
+
+            </a>
+
+            <a
+                href="https://linkedin.com/in/ContactAshwiniKR"
+                target="_blank">
+
+                LinkedIn ↗
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= PHOTO ================= -->
+
+    <div class="photo-wrap">
+
+        <!--
+        IMPORTANT:
+
+        If you are using your embedded photo code,
+        keep your existing Base64 src here.
+
+        Example:
+        src="data:image/jpeg;base64,YOUR_BASE64_DATA"
+        -->
+
+        <img
+            src="ashwini.jpeg"
+            alt="Ashwini K R"
+            class="profile">
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="title">
+
+        <small>
+            GET TO KNOW ME
+        </small>
+
+        <h2>
+            About Me
+        </h2>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>
+            Hello! I'm Ashwini K R 👋
+        </h3>
+
+        <p>
+            I am an Information Science Engineering student
+            with an interest in Data Analytics,
+            Artificial Intelligence and software development.
+        </p>
+
+        <p>
+            I have hands-on exposure to Python,
+            SQL/MySQL, Power BI, Tableau,
+            Git and GitHub.
+        </p>
+
+        <p>
+            I enjoy solving problems, learning new
+            technologies and developing practical projects
+            that create meaningful solutions.
+        </p>
+
+        <div class="location">
+            📍 Holenarsipura, Hassan, Karnataka
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+    <div class="title">
+
+        <small>
+            WHAT I WORK WITH
+        </small>
+
+        <h2>
+            Technical Skills
+        </h2>
+
+    </div>
+
+
+    <div class="skills">
+
+        <div class="skill">
+
+            <h3>
+                Programming & Data
+            </h3>
+
+            <p>Python</p>
+            <p>SQL / MySQL</p>
+            <p>JavaScript</p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <h3>
+                AI & Development
+            </h3>
+
+            <p>Deep Learning</p>
+            <p>Spring AI</p>
+            <p>CSS</p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <h3>
+                Analytics
+            </h3>
+
+            <p>Power BI</p>
+            <p>Tableau</p>
+            <p>MS Excel</p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <h3>
+                Tools
+            </h3>
+
+            <p>Git</p>
+            <p>GitHub</p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <h3>
+                Soft Skills
+            </h3>
+
+            <p>Leadership</p>
+            <p>Problem Solving</p>
+            <p>Team Collaboration</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECT ================= -->
+
+<section id="projects">
+
+    <div class="title">
+
+        <small>
+            MY WORK
+        </small>
+
+        <h2>
+            Projects
+        </h2>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>
+            Identification of Bird Species in Images
+            Using Deep Learning
+        </h3>
+
+        <p>
+            Designed and implemented an image-based
+            deep learning system to classify bird
+            species from photographs.
+        </p>
+
+
+        <div class="tags">
+
+            <span>Python</span>
+
+            <span>Deep Learning</span>
+
+            <span>Image Classification</span>
+
+        </div>
+
+
+        <p>
+            <strong>
+                Sep 2025 – Dec 2025
+            </strong>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education">
+
+    <div class="title">
+
+        <small>
+            MY ACADEMIC JOURNEY
+        </small>
+
+        <h2>
+            Education
+        </h2>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>
+            Bachelor of Engineering
+        </h3>
+
+        <h4 style="color:#6657d9;margin:8px 0 15px;">
+            Information Science and Engineering
+        </h4>
+
+        <p>
+            Bahubali College of Engineering,
+            Shravanabelagola
+        </p>
+
+        <p>
+            Visvesvaraya Technological University (VTU)
+        </p>
+
+        <p>
+            2023 – Present
+        </p>
+
+        <p>
+            <strong>
+                Expected Graduation: 2027
+            </strong>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="title">
+
+        <small>
+            GET IN TOUCH
+        </small>
+
+        <h2>
+            Contact Me
+        </h2>
+
+    </div>
+
+
+    <div class="card contact">
+
+        <p>
+            📍 Holenarsipura, Hassan, Karnataka
+        </p>
+
+        <p>
+            📞
+            <a href="tel:8105531661">
+                8105531661
+            </a>
+        </p>
+
+        <p>
+            ✉️
+            <a href="mailto:ashwinikrashu1@gmail.com">
+                ashwinikrashu1@gmail.com
+            </a>
+        </p>
+
+
+        <a
+            href="tel:8105531661"
+            class="btn primary">
+
+            Call Me
+
+        </a>
+
+
+        <a
+            href="mailto:ashwinikrashu1@gmail.com"
+            class="btn secondary">
+
+            Email Me
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>
+        Ashwini K R
+    </h3>
+
+    <p>
+        Data Analyst |
+        Information Science Engineering Student
+    </p>
+
+
+    <div>
+
+        <a
+            href="https://github.com/ashwinikr13"
+            target="_blank">
+
+            GitHub
+
+        </a>
+
+        <a
+            href="https://linkedin.com/in/ContactAshwiniKR"
+            target="_blank">
+
+            LinkedIn
+
+        </a>
+
+        <a
+            href="mailto:ashwinikrashu1@gmail.com">
+
+            Email
+
+        </a>
+
+    </div>
+
+
+    <p>
+        © 2026 Ashwini K R. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+</html>
